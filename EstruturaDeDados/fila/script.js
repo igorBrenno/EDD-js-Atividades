@@ -10,25 +10,25 @@ function dequeue() {
     updateUI()
 }
 
-function size() {
-    return queue.length
+function check_size() {
+    return console.log(queue.length)
 }
 
 function isEmpty() {
-    return queue.length === 0
+    return console.log(queue.length === 0)
 }
 
 function front() {
-    return isEmpty() ? null : queue[0]
+    return console.log(isEmpty() ? null : queue[0])
 }
 
 function rear() {
-    return isEmpty() ? null : queue[size() - 1]
+    return console.log(isEmpty() ? null : queue[size() - 1])
 }
 
 function updateUI() {
     const meuArrayDiv = document.getElementById('meuArray')
-    meuArrayDiv.innerHTML = queue
+    meuArrayDiv.innerHTML = queue.join(', ')
 }
 
 function getElementValue() {
