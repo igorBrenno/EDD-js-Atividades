@@ -1,27 +1,40 @@
 const queue = []
 
-function enqueue(valoe){
-    queue.push(valoe)
+function enqueue(valor) {
+    queue.push(valor)
+    updateUI()
 }
 
-function dequeue(){
-    return queue.shift()
+function dequeue() {
+    queue.shift()
+    updateUI()
 }
 
-function size(){
+function size() {
     return queue.length
 }
 
-function isEmpty(){
+function isEmpty() {
     return queue.length === 0
 }
 
-function front(){
-    return isEmpty()? null: queue[0]
+function front() {
+    return isEmpty() ? null : queue[0]
 }
 
-function rear(){
-    return isEmpty()? null: queue[size()-1]
+function rear() {
+    return isEmpty() ? null : queue[size() - 1]
 }
 
-export {enqueue, dequeue, size, isEmpty, front, rear}
+function updateUI() {
+    const meuArrayDiv = document.getElementById('meuArray')
+    meuArrayDiv.innerHTML = queue
+}
+
+function getElementValue() {
+    const valor = document.getElementById('elemento').value
+    if (valor) {
+        enqueue(valor)
+        document.getElementById('elemento').value = ''
+    }
+}
